@@ -15,6 +15,13 @@ class PageViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "<h1>About Page</h1>")
         self.assertContains(response, "<p>This is the about page of the website.</p>")
+    
+    def test_test_view(self):
+        response = self.client.get(reverse("test_view"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "<h1>This is a test view.</h1>")
+    
     def test_api_status(self):
         response = self.client.get(reverse("api_status"))
 
