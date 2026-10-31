@@ -11,6 +11,9 @@ def home(request):
 def about(request):
     return HttpResponse("<h1>About Page</h1><p>This is the about page of the website.</p>")
 
+def test_view(request):
+    return HttpResponse("<h1>This is a test view.</h1>")
+
 @api_view(["GET"])
 def api_status(request):
     return Response({
